@@ -1,4 +1,5 @@
 # ELCT 350 Tools
+Various tools for ELCT 350 assignments and projects
 
 ## Plotter Example
 
