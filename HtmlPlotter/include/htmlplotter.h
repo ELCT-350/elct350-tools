@@ -22,8 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#ifndef PLOTTER_H
-#define PLOTTER_H
+#ifndef HTMLPLOTTER_H
+#define HTMLPLOTTER_H
 
 #include <vector>
 #include <cstdio>

@@ -4,10 +4,9 @@
 #include "htmlplotter.h"
 
 #include <sciplot/sciplot.hpp>
-#include <Eigen\Dense>
+#include <Eigen/Dense>
 
 using namespace std;
-using namespace sciplot;
 
 using mat = Eigen::MatrixXd;
 using vec = Eigen::VectorXd;
@@ -20,7 +19,7 @@ int main()
     //           L1    R1
     //     .----UUU---[ ]----.-------.-------.
     //    +|    --->         |       |       |    +
-    // V1 ( )    i       C1 ===  R1 [ ]  I1 (v)   v
+    // V1 ( )    i       C1 ===  R1 [ ]  I1 (^)   v
     //     |                 |       |       |    -
     //     '-----------------+-------'-------'
     //                      -+-
@@ -36,13 +35,8 @@ int main()
     vec X(n);
     vec U(m);
     
-    // output arrays:
-
-    vector<double> time;
-    vector<double> current;
-    vector<double> voltage;
-
-    Plot plot;
+    Plotter plotter("State Space Simulation", 1000, 500);
+    plotter.SetLabels("Voltage (V)", "Current (A)");
 
     double h = 0.01;
     double tmax = 10.0;
@@ -72,22 +66,12 @@ int main()
 
     for (double t = 0.0; t < tmax + h; t += h)
     {
-        time.push_back(t);
-        current.push_back(X(0));
-        voltage.push_back(X(1));
-
+        plotter.AddRow(t, X(1), X(0));
+    
         X = X + h * A * X + h * B * U;
     }
-
-    plot.size(1200, 600);
-    plot.xlabel("t (s)");
-
-    plot.drawCurve(time, voltage).label("Voltage (V)");
-    plot.drawCurve(time, current).label("Current (A)");
-
-    plot.show();
-
-    plot.save("circuit1.pdf");
+    
+    plotter.Plot();
 
     return 0;
 }

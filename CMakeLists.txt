@@ -5,5 +5,8 @@ set(CMAKE_CXX_STANDARD 20)
 
 project(Elct350Tools)
 
+find_package(sciplot CONFIG REQUIRED)
+find_package(Eigen3 3.3 REQUIRED NO_MODULE)
+
 add_subdirectory(Main)
 add_subdirectory(HtmlPlotter)
