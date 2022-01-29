@@ -5,5 +5,5 @@ set(CMAKE_CXX_STANDARD 20)
 
 project(Elct350Tools)
 
-add_subdirectory(Tests)
-add_subdirectory(Plotter)
+add_subdirectory(Main)
+add_subdirectory(HtmlPlotter)

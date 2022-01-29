@@ -2,10 +2,14 @@ CMakeFiles/
 CMakeCache.txt
 Makefile
 cmake_install.cmake
+CMakeSettings.json
 *.html
 tests
 out/
 .vs/
+*.sln
+*.vsxproj
+*.vsxproj.filters
 .vscode/
 *.bak
 build/
