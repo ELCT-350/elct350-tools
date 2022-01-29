@@ -6,4 +6,7 @@ cmake_install.cmake
 tests
 out/
 .vs/
+.vscode/
 *.bak
+build/
+ouput/
