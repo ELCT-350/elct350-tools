@@ -1,10 +1,8 @@
 
 #include <iostream>
 #include <cmath>
-#include "htmlplotter.h"
-
-#include <sciplot/sciplot.hpp>
 #include <Eigen/Dense>
+#include "htmlplotter.h"
 
 using namespace std;
 
